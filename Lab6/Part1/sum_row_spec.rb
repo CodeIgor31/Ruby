@@ -16,7 +16,7 @@ RSpec.describe SumRow do
     end
     context 'When accuracy is wrong' do
       it 'returns Error' do
-        accuracy = rand(3..100)
+        accuracy = rand(-100..100)
         expect(described_class.sum_row(accuracy)).to eql('Error')
       end
     end
