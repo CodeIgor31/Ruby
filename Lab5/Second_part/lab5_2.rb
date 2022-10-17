@@ -11,7 +11,9 @@ module Main
   n = gets.chomp.to_i
   i = 0
   puts('Вводите элементы')
-  while i < n
+  loop do
+    break if i == n
+
     list[i] = gets.chomp.to_i
     i += 1
   end
