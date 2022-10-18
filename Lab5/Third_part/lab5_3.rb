@@ -17,5 +17,8 @@ module Main
   p 'Исходная последовательность'
   p string_list.empty? ? 'Empty string array' : string_list
   p 'Новая последовательность'
-  p CheckString.check_string(string_list)
+  new_string = CheckString.check_string(string_list)
+  p new_string
+  p 'Счетчик изменений:'
+  p CheckString.counter
 end
