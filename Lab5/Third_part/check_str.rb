@@ -5,18 +5,12 @@ module CheckString
   @reg = /\d/
   @count = 0
   def self.check_string(string_list)
-    result = Array[]
-    string_list.each do |str|
-      tech_arr = []
-      result.push(correcting(str, tech_arr).join(' '))
-    end
-    string_list.empty? ? 'Empty string array' : result
+    string_list.map { |str| @result = [].push(correcting(str, []).join(' '))}
+    string_list.empty? ? 'Empty string array' : @result
   end
 
   def self.correcting(str, tech_arr)
-    str.split.each do |word|
-      tech_arr.push(match?(word)) unless match?(word).nil?
-    end
+    str.split.map { |word| tech_arr.push(match?(word)) unless match?(word).nil? }
     tech_arr
   end
 
